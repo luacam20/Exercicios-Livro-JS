@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Somando os numeros</h1>
+    <p>Digite um numero: <input type="number" name="numero1" id="n1"></p>
+    <p>Digite um numero: <input type="number" name="numero2" id="n2"></p>
+    <input type="button" value="Calculando" onclick="Calcular()">
+    <div id="res"></div>
+</body>
+<script>
+    function Calcular() {
+        var nu1 = document.getElementById("n1").value;
+        var nu2 = document.getElementById("n2").value;
+        var somando = Number(nu1) + Number(nu2); 
+        var res = document.getElementById("res")
+        
+        res.innerHTML = `O valor da soma é ${somando}`
+        
+    }
+</script>
+</html>

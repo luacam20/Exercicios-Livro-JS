@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando dobro</title>
+</head>
+<body>
+    <h1>Calculando o dobro </h1>
+    <p>Digite um numero <input type="number" name="lendon1" id="n1"></p>
+    <p><input type="button" value="Calculando" onclick="Calcular()"></p>
+    <div id="res"></div>
+</body>
+<script>
+    function Calcular() {
+        var numero1 = window.document.getElementById("n1").value;// nunca se esqueça do value 
+        var calculo = numero1 * 2;
+        var res = window.document.getElementById("res")// o res é essencial para escrever na tela 
+        res.innerHTML = `O dobro é igual a  ${calculo}` 
+    }
+</script>
+</html>

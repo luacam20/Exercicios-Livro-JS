@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Loja da LuLu</h1>
+    <p>Preço R$:<input type="number" name="valor da roupa" id="preco"></p>
+    <input type="button" value="calculando" onclick="Calcular()">
+    <div id = "res"></div>
+</body>
+<script>
+    function Calcular() {
+        var preco = window.document.getElementById("preco").value;
+        var vista =   Number(preco) - Number(preco) * 0.10;
+        var parcelado = Number(preco)/3;
+        var res = window.document.getElementById("res") 
+        res.innerHTML = `<p>Total R$: ${preco}</p>
+        <p>á vista R$: ${vista} </p>
+        <p>parcelado 3x R$: ${parcelado}</p>`
+        
+    }
+</script>
+</html>

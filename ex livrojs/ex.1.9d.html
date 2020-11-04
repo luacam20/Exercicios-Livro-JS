@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculando a duração de uma viagem</h1>
+    <p>Dias de viajem <input type="number" name="Dias" id="dias"></p>
+    <p>Horas de vaigem <input type="number" name="Horas" id="horas"></p>
+    <input type="button" value="Calculando horas" onclick="Calcular()">
+    <div id="res"></div>
+</body>
+<script>
+    function Calcular() {
+        var diasv = window.document.getElementById("dias").value;
+        var horasv = window.document.getElementById("horas").value;
+        var tempo = Number(diasv * 24 + horasv)
+        var res = window.document.getElementById("res")
+        res.innerHTML = `O total de horas da viajem é ${tempo}`
+    }
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Quantas pessoas pagaram a pizza?</h1>
+    <p>Valor da conta R$:<input type="number" name="valor da conta" id="valordc"></p>
+    <p>Número de clientes: <input type="number" name="numero de clientes" id="numerocl"></p>
+    <input type="button" value="calculando a divisao" onclick="Calcular()">
+    <div id="res"></div>
+    
+</body>
+<script>
+    function Calcular() {
+        var valor = window.document.getElementById("valordc").value;
+        var clientes = window.document.getElementById("numerocl").value;
+        var total = Number(valor) / Number(clientes);
+        var res = window.document.getElementById("res");
+        res.innerHTML =`Valor da conta :${valor}R$ , esta conta será dividida por ${clientes} pessoas e cada pessoa pagará ${total}R$.`;
+    }
+</script>
+</html>

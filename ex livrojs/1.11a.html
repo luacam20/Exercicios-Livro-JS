@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculando o sucessor e o antecessor</h1>
+    <p>Digite um numero: <input type="number" name="numero" id="meio"></p>
+    <input type="button" value="Calculando" onclick="Calcular()">
+    <div id= "res"></div>
+</body>
+<script>
+    function Calcular() {
+        var numero = window.document.getElementById("meio").value;
+        var antecessor = Number(numero - 1);
+        var sucessor = Number(numero) + Number(1);
+        var res = window.document.getElementById("res")
+        res.innerHTML = `Numero ${numero}` 
+        res.innerHTML = `Vizinhos ${antecessor} e ${sucessor}`
+    }
+</script>
+</html>

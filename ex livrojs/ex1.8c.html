@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculando o jantar</h1>
+    <p>Valor do jantar: <input type="number" name="valorjantar" id="vj"></p>
+    <input type="button" value="Calculando a taxa" onclick="Calcular()">
+    <div id="res"></div>
+</body>
+<script>
+    function Calcular() {
+        var jantar = window.document.getElementById("vj").value;
+        var taxa = Number(jantar * 0.10);
+        var res = window.document.getElementById("res")
+        res.innerHTML = `O valor do jantar é ${jantar} , e a taxa do garçom é ${taxa}`
+    }
+</script>
+</html>
