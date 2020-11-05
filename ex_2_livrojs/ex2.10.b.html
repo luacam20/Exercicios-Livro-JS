@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2b</title>
+</head>
+<body>
+    <h1>Lan House JS</h1>
+     <p>Valor por 15min de Uso R$: <input type="number" name="valor" id="valor"></p>
+     <p>Tempo de Uso do Cliente: <input type="number" name="tempo" id="tempo"></p>
+     <input type="button" value="Calcular valor a pagar" onclick="Calcular()">
+     <div id="res"></div>
+</body>
+<script>
+    function Calcular() {
+        var valor = window.document.getElementById("valor").value;
+        var tempo = window.document.getElementById("tempo").value;
+        var min = Number(tempo)/15;
+        var arredonda = Math.ceil(min);
+        var total = Number(valor) * Number(arredonda);
+        var res = window.document.getElementById("res")
+        res.innerHTML = `<p><strong/> Valor a pagar R$: ${total.toFixed(2)} </strong></p>`
+    }
+</script>
+</html>

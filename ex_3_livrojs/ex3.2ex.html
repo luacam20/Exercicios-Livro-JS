@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas</title>
+</head>
+<body>
+    <h1>Programa Situação do Aluno</h1>   
+    <p>Nome do Aluno: <input type="text" name="nome" id="aluno"></p>
+    <p>Primeira nota: <input type="number" name="nota1" id="n1"> </p>
+    <p>Segunda nota: <input type="number" name="nota2" id="n2"></p>
+    <input type="button" value="Exibir Média e Situação" onclick="Calcular()">
+    <div id="res"></div>
+</body>
+<script>
+    function Calcular() {
+        var nome = window.document.getElementById("aluno").value;
+        var nota1 = window.document.getElementById("n1").value;
+        var nota2 = window.document.getElementById("n2").value;
+        var media = Number(nota1) + Number(nota2) / 2;
+        if ( media >= 7) {
+            res.innerHTML = `<p>Media de notas: ${media}</p>
+            <p>Parabéns ${nome}! Voce foi aprovado(a)</p>`
+        } else {
+            res.innerHTML = `${nome}, voce foi reprovado(a)`
+        }
+
+    }
+</script>
+</html>

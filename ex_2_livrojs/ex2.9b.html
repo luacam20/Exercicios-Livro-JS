@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revenda</title>
+</head>
+<body>
+    <h1>Revenda de Veículos JS</h1>
+    <p>Veículo: <input type="text" name="modelo" id="modelo"></p>
+    <p>Preço R$: <input type="number" name="preco" id="preco"></p>
+    <input type="button" value="Ver promoção" onclick="Calcular()">
+    <div id= "res"></div>
+
+</body>
+<script>
+    function Calcular() {
+        var carro = window.document.getElementById("modelo").value;
+        var preco = window.document.getElementById("preco").value;
+        var entrada = Number(preco) * 0.50;
+        var saldo = Number(preco)/2; 
+        var promo = Number(saldo)/12;
+        var res = window.document.getElementById("res")
+        res.innerHTML = `<p>Promoção: ${carro}</P>
+            <p>Entrada de R$: ${entrada}</p>
+            <p>+ 12x de R$: ${promo}`
+    }
+</script>
+</html>

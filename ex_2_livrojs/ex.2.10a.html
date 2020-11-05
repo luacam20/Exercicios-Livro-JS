@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Araújo</title>
+</head>
+<body>
+<h1>Drogaria Araújo</h1>
+<p>Nome do medicamento: <input type="text" name="medicamento" id="med"></p>
+<p>Quantidade do medicamento: <input type="number" name="quantidade" id="qtd"></p>
+<p>Preço R$: <input type="number" name="preco" id="prec"></p>
+<input type="button" value="Calcular promoção" onclick="Calcular()">
+<div id= "res"></div>
+</body>
+<script>
+    function Calcular() {
+        var res = window.document.getElementById("res");
+        var remedio = window.document.getElementById("med").value;
+        var valor = window.document.getElementById("prec").value;
+        var qtd = window.document.getElementById("qtd").value;
+        var total = Number(qtd ) * Number(valor);
+        var totalArredondado = Math.floor(total);
+
+        if (qtd == 2) {
+            res.innerHTML = `<p>${remedio}</p>  Leve 2 por ${totalArredondado.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`
+            
+        } else { 
+          res.innerHTML = `<p> ${remedio}  ${total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>`
+        } 
+          
+
+    }
+</script>
+</html>

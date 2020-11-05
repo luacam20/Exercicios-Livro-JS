@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locadora</title>
+</head>
+<body>
+    <h1>Vídeo Locadora JS</h1>
+    <p>Título do Filme: <input type="text" name="filme" id="nfilme"></p>
+    <p>Duração (min): <input type="number" name="min" id="dmin"></p>
+    <input type="button" value="Converter em Horas e Minutos" onclick="Calcular()">
+    <div id="res"></div>
+</body>
+<script>
+    function Calcular() {
+        var filme = window.document.getElementById("nfilme").value;
+        var minutos = window.document.getElementById("dmin").value;
+        var horas = Math.floor (minutos / 60);
+        var min = Number(minutos) % 60;
+        var res = window.document.getElementById("res");
+        res.innerHTML = `<p> ${filme}</p>
+        <p> ${horas} hora(s) e ${min} minuto(s).`
+    }
+</script>
+</html>

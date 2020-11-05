@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Supermercado JS</h1>
+    <p>Produto: <input type="text" name="produto" id="prod"></p>
+    <p>Preço R$: <input type="number" name="Preço" id="prec"></p>
+    <input type="button" value="Ver Promoção" onclick="Calcular()">
+    <div id="res"></div>
+</body>
+<script>
+    function Calcular() {
+        var produto = window.document.getElementById("prod").value;
+        var preco = window.document.getElementById("prec").value;
+        var promo = Number(preco) * 3 - 2;
+        var terceiro = Number(preco) / 2;
+        var res = window.document.getElementById("res");
+        res.innerHTML = `<strong><p>${produto} - Promoção: Leve 3 por R$: ${promo.toFixed(2)}</p>
+        <p> O terceiro produto custa apenas R$: ${terceiro.toFixed(2)}</strong>`
+    }
+</script>
+</html>

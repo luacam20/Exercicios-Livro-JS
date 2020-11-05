@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de notas</title>
+</head>
+<body>
+    <h1>Sistema de notas </h1>
+    <p>Digite o nume do aluno: <input type="text" name="nome" id="aluno"></p>
+    <p>Digite a primeira nota: <input type="number" name="nota1" id="nota1"></p>
+    <p>Digite a segunda nota: <input type="number" name="nota2" id="nota2"></p>
+    <input type="button" value="Calcular media" onclick="Calcular()">
+    <div id = "res"></div>
+</body>
+<script>
+    function Calcular() {
+        var aluno = window.document.getElementById("aluno").value;
+        var nota1 = window.document.getElementById("nota1").value;
+        var nota2 = window.document.getElementById("nota2").value;
+        var media = Number(nota1) + Number(nota2);
+        var total = Number(media)/ 2;
+        var res = window.document.getElementById("res");
+        res.innerHTML = `<p> O aluno(a): ${aluno}, tirou as seguintes notas:</p> 
+        <p>Nota 1: ${nota1}</p> 
+        <p>Nota 2: ${nota2}</p> 
+        <p> Média: ${total}</p> `
+
+    }
+</script>
+</html>
