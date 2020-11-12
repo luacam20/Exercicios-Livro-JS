@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuso Horário</title>
+    <style>
+            img {float: left;}
+            h1 {border-bottom-style: inset;}
+        
+    </style>
+</head>
+<body>
+    <h1>Programa Fuso Horário</h1>
+    <img src="https://static.escolakids.uol.com.br/conteudo_legenda/7d10bf0a416c464f2776daa96daf6ade.jpg" alt="fotoplaneta">
+
+    <p>
+       Hora no Brasil(h.m): <input type="number" name="horaBrasil" id="horasBrasil">
+    </p>
+    <input type="button" value="Exibir Hora na França" onclick="Calcular()">
+    <div id="res"></div>
+    
+</body>
+<script>
+    function Calcular() {
+     var hBrasil = window.document.getElementById("horasBrasil").value;
+     var hfrança= Number(hBrasil) + 5;
+     var res = window.document.getElementById("res");
+     
+     if (hfrança > 24) {
+         hfrança = Number(hfrança - 24)
+     }
+    
+    res.innerText = `Hora na França: ${hfrança.toFixed(2)}`
+    
+
+    }
+    
+</script>
+</html>
