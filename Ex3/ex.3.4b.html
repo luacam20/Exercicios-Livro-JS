@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raiz qudrada</title>
+</head>
+<body>
+    <div 
+    id="content"
+    >
+    
+        <img 
+        src="https://images.vexels.com/media/users/3/205996/isolated/preview/81d3f60bca6d3b2cbef6ba1ff1e0b4f7-desenho-de-calculadora-fofo-by-vexels.png" alt="Calculadora"
+        >
+        <div id="sub-content">
+            <h1>
+                Programa Raiz Quadrada
+            </h1> 
+            <section >
+                <div class="form">
+                    <p>
+                        Número:  <input type="number" name="base" id="base">
+                        <input
+                        type="button"
+                        value="Exibir Raiz Quadrada"
+                        onclick="Calcular()"
+                        >
+                    </p>
+                    <div id="res"></div> 
+                </div>
+            </section>
+        </div>
+        
+
+        
+   </div>
+    </body>
+    <script>
+        function Calcular() {
+            var base = window.document.getElementById("base").value;
+            var raiz = Number(Math.sqrt(base));
+            var res = window.document.getElementById("res");
+
+            if (raiz == Math.floor(raiz)) {
+                res.innerHTML = `${raiz}: raiz`
+            } else {
+                res.innerHTML = `Não existe raiz exata para ${base}`
+            }
+        }
+    </script>
+
+</html>
