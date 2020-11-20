@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de velocidade</title>
+</head>
+<body>
+    <h1>Verificador de velocidade</h1>
+      <p>velocidade permitida:<input type="number" name="velocidadepermitida" id="vperm"></p>
+        <p>velocidade do condutor: <input type="number" name="velocidadecondutor" id="vcond"></p>
+         <input type="button" value="Verificar velocidade" onclick="Calcular()">
+             <div id="res"></div>
+</body>
+<script>
+    function Calcular() {
+        var vper = window.document.getElementById("vperm").value;
+        var vcond = window.document.getElementById("vcond").value;
+        var res = window.document.getElementById("res");
+        var smulta = (Number(vcond <= vper));
+        var mleve = (Number(vcond * 0.20 + vcond));
+        var multal = Number(mleve > vcond != smulta);
+        
+        if (smulta) {
+            res.innerHTML = `sem multa`; 
+        }
+        if (multal)  {
+            res.innerHTML = `multa leve`; 
+        }
+
+        }
+</script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa Parquímetro</title>
+</head>
+<body>
+  <h1>Programa Parquímetro</h1>  
+  <p>Valor R$: <input type="number" name="valor" id="valor"></p>
+  <input type="button" value="Confirmar depósito" onclick="Calcular()">
+  <div id="res"></div>
+</body>
+<script>
+
+    function Calcular() {
+        var valor = window.document.getElementById("valor").value; 
+        var res = window.document.getElementById("res"); 
+        var t1 = Number(valor >= 1); 
+        var t2 = Number(valor >= 1.75); 
+        var t3 = Number(valor >= 3 ); 
+        var troco1 = Number (valor - 1);
+        var troco2 = Number (valor - 1.75); 
+        var troco3 = Number (valor - 3); 
+
+        if (t1) {
+            res.innerHTML = `<strong><p>Tempo: 30 min</p> <p>Troco: ${troco1.toFixed(2)}</p></strong>`; 
+        }
+        if (t2) {
+            res.innerHTML = `<strong><p>Tempo: 60 min</p>
+            </p>Troco: ${troco2.toFixed(2)}</p></strong>`;
+        }
+        if (t3) {
+            res.innerHTML = `<strong><p>Tempo: 120 min</p>
+            <p>Troco: ${troco3.toFixed(2)}</p></strong>`;
+        }
+    }
+</script>
+</html>

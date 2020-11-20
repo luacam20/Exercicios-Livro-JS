@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangulo</title>
+</head>
+<body>
+    <h1>Programa Lados de um Triangulo</h1>
+    <p>Lado A: <input type="number" name="ladoA" id="ladoA"></p>
+    <p>Lado B: <input type="number" name="ladoB" id="ladoB"></p>
+    <p>Lado C: <input type="number" name="ladoC" id="ladoC"></p>
+    <input type="button" value="Verificar Lados" onclick="Calcular()">
+    <div id="res"></div>
+</body>
+<script>
+    function Calcular() {
+        var ladoA = window.document.getElementById("ladoA").value;
+        var ladoB = window.document.getElementById("ladoB").value;
+        var ladoC = window.document.getElementById("ladoC").value; 
+        var res = window.document.getElementById("res"); 
+        var eql = (Number(ladoA + ladoB == ladoC + ladoA));// Equilatero todos lados iguais
+        var isoc = (Number(ladoA == ladoB || ladoC == ladoA || ladoB == ladoC));// Isoceles 2 lados iguais
+        var escl = (Number(ladoA + ladoB != ladoC + ladoA != ladoB + ladoC));//Escaleno todos diferentes
+        
+
+        if (eql) {
+            res.innerHTML = `<p>Lados podem formar um triangulo:</p> <p><strong>Equilátero ou seja todos lados do triangulo são iguais.</strong></p>`;
+        }
+        else if (isoc) {
+            res.innerHTML = `<p>Lados podem formar um triangulo:</p> <p><strong>Isóceles ou seja o triangulo tem 2 lados iguais</strong></p>`; 
+        }
+        else if (escl) {
+            res.innerHTML = `<p>Lados podem formar um triangulo:</p> <p><strong>Escaleno ou seja todos lados do triangulo são diferentes</strong></p>`; 
+        }
+    }
+</script>
+</html>
