@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decrescente</title>
+</head>
+<body>
+    <h1>Ordem Decrescente</h1>
+    <p>Numero: <input type="text" name="numero" id="numero"></p>
+    <p><input type="button" value="Decrescente ate 1" onclick="Calcular()"></p>
+    <div id="res"></div>
+    
+</body>
+<script>
+function Calcular() {
+    var num = window.document.getElementById("numero").value; 
+    var res = window.document.getElementById("res");
+    
+    var n = Number(num); 
+    
+    for (var i = num; i > 0; i--) {
+        res.innerHTML += `<p>${i}</p>`;
+    }
+     
+
+}
+</script>
+</html>

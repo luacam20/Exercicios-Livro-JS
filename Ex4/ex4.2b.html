@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordem Descrescente</title>
+</head>
+<body>
+    <h1>Ordem Descrescente usando while</h1>
+    <p>Número: <input type="text" name="numero" id="numero"></p>
+    <input type="button" value="Ordem Descrescente" onclick="Calcular()">
+    <div id="res"></div>
+</body>
+<script>
+    function Calcular() {
+        var num = window.document.getElementById("numero").value; 
+        var res = window.document.getElementById("res"); 
+        var n = Number(num); 
+        var i = n;
+        while( i > 0) {
+            res.innerHTML += ` ${i},`; 
+            i--
+        }
+    }
+</script>
+</html>
