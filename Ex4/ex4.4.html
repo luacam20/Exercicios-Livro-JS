@@ -1,0 +1,25 @@
+<script>
+    alert("Digite 0 para sair"); 
+    // inicio da repetição 
+    do {
+        var num = Number(prompt("Número: ")); 
+
+        if (num == 0 || isNaN(num)) {
+            var sair = confirm("Confirma saida ?"); // solicita confirmação do usuario
+            if(sair) {
+                break; // sai da repetição 
+            } else {
+                continue; // volta ao inicio do laço
+            }
+            }
+            // se par, mostra o dobro, se impar o triplo
+            if (num % 2 == 0) {
+                alert("O dobro de " + num + " é: " + num * 2);
+            } else {
+                alert("O Triplo de " + num + " é: " + num * 3); 
+            }
+         } while (true); // enquanto for verdade (so sai do laço, pelo break)
+        
+
+        alert("Bye, bye...");
+</script>
