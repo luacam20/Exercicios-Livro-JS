@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Programa contas do Mes</h1>
+    <p>Descrição da Conta: 
+        <input type="text" id="inDescricao">
+    </p>
+    <p>
+        Valor a pagar R$:
+        <input type="text"  id="inValor">
+    </p>
+    <input type="button" value="Registrar Conta" onclick="Registrar()">
+    <pre id="outListaContas"></pre>
+    <pre id="outTotal"></pre>
+</body>
+<script>
+     // declara e inicializa contadores e acumuladores (variaveis globais)
+    var numContas = 0; 
+    var valTotal = 0; 
+
+    // variavel string que acumula as contas 
+    var resposta = ""; 
+    
+    function Registrar() {
+        var inDescricao = document.getElementById("inDescricao");
+        var inValor = document.getElementById("inValor");
+        var outListaContas = document.getElementById("outListaContas");
+        var outTotal = document.getElementById("outTotal");
+
+        // obtem conteudo dos campos 
+        var descricao = inDescricao.value;
+        var valor = Number(inValor.value); 
+
+        // adiciona valores ao contador e acumulador 
+        numContas++; 
+        valTotal = valTotal + valor; 
+
+        // concatena as contas 
+        resposta = resposta + descricao + " - R$: " + valor.toFixed(2) + "\n";
+
+        outListaContas.textContent = resposta + "-----------------------------------"; 
+        outTotal.textContent = numContas + " Conta(s) - Total R$: " + valTotal.toFixed(2); 
+
+        inDescricao.value = ""; 
+        inValor.value = ""; 
+        inDescricao.focus();
+    }
+   
+   
+    
+</script>
+</html>

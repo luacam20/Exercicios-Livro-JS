@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 4.5</title>
+</head>
+<body>
+    <h1>Programa contas do mês</h1>
+    <p>
+        Descrição da conta:
+        <input id="accountDescription" type="text" />
+    </p>
+    
+    <p>
+        Valor a pagar:
+        <input id="paymentValue" type="text" />
+    </p>
+    
+    <button onclick="registerAccounts()">Registrar contas</button>  
+
+    <div id="containerList"></div>
+
+    <p>-------------------------------</p>
+    
+    <p id="res"></p>
+</body>
+<script>
+    let list = [];
+
+       function registerAccounts() {
+            var accountDescription = document.getElementById('accountDescription').value;
+            var paymentValue = document.getElementById('paymentValue').value;
+            var containerList = document.getElementById('containerList');
+            var res = document.getElementById('res');
+            
+            // Método push Adiciona uma nova posição ao array
+            // nesse caso o array é a variável list 
+            // Então foi adicionado um novo item a lista que é um objeto contendo o valor de
+            // descrição da conta e valor da conta
+            // objeto é uma variável que armazna outras variáveis que podem ser de qualquer tipo 
+            // Nesse site explica melhor https://developer.mozilla.org/pt-BR/docs/Aprender/Jav
+
+            list.push({
+                description: accountDescription,
+                value: paymentValue,
+            })
+
+            // [
+            // {
+            //     description: accountDescription,
+            //     value: paymentValue,
+            // }
+            // ]
+
+            console.log(list);
+            console.log(list.length);
+
+            containerList.innerHTML += `<p>${list[list.length - 1].description} - ${list[list.length - 1].value}</p>`;
+
+            var j = 0;
+
+        
+
+            for(var i = 0; i<list.length; i++){
+                j+= Number(list[i].value);
+            }
+
+            console.log(list.length)
+            res.innerText = `${list.length} Conta(s) - Total ${j}`;
+
+            accountDescription = "";
+            paymentValue = "";
+
+        }
+</script>
+</html>
