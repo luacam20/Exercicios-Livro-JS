@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>Programa Repete Fruta</h1> 
+   <p>Fruta: <input type="text" id="fruta"></p>
+   <p>Número: <input type="number" id="numero"></p>
+    <input type="button" value="Repete fruta" onclick="Calcular()">
+    <p id="res"></p>
+</body>
+<script>
+    function Calcular() {
+        var fruit = document.getElementById("fruta").value; 
+        var numInput = document.getElementById("numero"); 
+        var res = document.getElementById("res");
+        var num = Number(numero.value); 
+
+        res.innerText = "";
+
+        var i = 1;
+
+        do {
+            let resString;
+        
+            if(i === 1){
+                resString = `${fruit}`;
+            }else{
+                resString = ` * ${fruit}`;
+            }
+
+            res.innerText += resString;
+
+            i++;
+        } while(i <= num);
+
+        // Declara a var inicial 
+        // A condição em que o laço vai ser interrompido
+        // incremento
+
+        // for (var i = 1; i <= num; i++) {
+        //     let resString;
+            
+        //     if(i === 1){
+        //         resString = `${fruit}`;
+        //     }else{
+        //         resString = ` * ${fruit}`
+        //     }
+
+        //     res.innerText += resString;
+        // }
+
+        
+    }
+</script>
+
+</html>
