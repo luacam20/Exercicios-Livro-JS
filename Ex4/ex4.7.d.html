@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fábrica de Estrelas</h1>
+    <p>Numero: <input type="number" id="nr"></p>
+    <input type="button" value="desenhar Estrelas" onclick="Calcular()">
+    <div id="res"></div>
+
+
+</body>
+<script>
+    function Calcular() {
+        var num = Number(document.getElementById("nr").value); 
+        var res = document.getElementById("res"); 
+
+        for (var i = 1; i <= num; i++) {
+            res.innerHTML += `_*`;
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Programa Criação de Chinchilas</h1>
+    <p>Numero de Chinchilas: <input type="text" id="nchinchilas"></p>
+    <p>Numero de anos: <input type="text" id="numAnos"></p>
+    <input type="button" value="Mostrar previsão de Chinchilas" onclick="Mostrar()">
+    <pre id="res"></pre>
+
+</body>
+<script>
+    function Mostrar() {
+        var chinch = document.getElementById("nchinchilas");
+        var nanos = document.getElementById("numAnos"); 
+        var res = document.getElementById("res"); 
+        var chin = Number(nchinchilas.value); 
+        var anos = Number(numAnos.value); 
+
+        var chinchilasAcum = chin;
+        
+        for (var i = 1; i <= anos; i++) {
+            if(i === 1){
+                res.innerHTML += `ano ${i} - ${chinchilasAcum}`;
+            }else{
+                chinchilasAcum = chinchilasAcum * 3;
+                res.innerHTML += `<p>ano ${i} - ${chinchilasAcum}</p>`;
+            }
+        }
+    }
+</script>
+</html>
