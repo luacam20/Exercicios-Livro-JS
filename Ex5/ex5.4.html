@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa Brinquedoteca</title>
+</head>
+<body>
+    <h1>Programa Brinquedoteca</h1>
+    <p>Nome da Criança: <input type="text"  id="name"></p>
+    <p>Idade: <input type="text"  id="age"></p>
+    <input type="button" value="Adicionar nome" onclick="Adicionar()">
+    <pre id="list"></pre>
+</body>
+<script>
+        function Adicionar() {
+        var nome = window.document.getElementById("name").value; 
+        var idade = (Number(window.document.getElementById("age").value)); 
+        var lista = window.document.getElementById("list"); 
+
+        var nomec = 0; 
+        var idadec = 0; 
+            console.log("Adicionar")
+        var res = ""; 
+
+        for (var i = 1; i < 10; i++) {
+            lista.innerHTML += `${nome} - ${idade}`;
+        }
+
+  }

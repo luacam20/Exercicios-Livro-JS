@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body>
+    <h1>Programa Tabuada</h1>
+    
+    <p><input type="text" id="name"></p>
+    <p><input type="text" id="age"></p>
+
+    <input type="button" value="Adicionar" onclick="AddChildren()">
+    <pre id="res"></pre>
+</body>
+<script>
+    var criancas = [];
+    
+    function AddChildren() {
+        var name = window.document.getElementById("name").value;
+        var age = Number(window.document.getElementById("age").value);
+
+        var res = window.document.getElementById("res");
+
+        criancas.push({
+            nome: name,
+            idade: age
+        });
+
+        res.innerHTML = '';
+
+        for(var i=0; i<criancas.length; i++){
+            res.innerHTML += `<p>${criancas[i].nome} - ${criancas[i].idade}`;
+        }
+    }
+</script>
+</html>

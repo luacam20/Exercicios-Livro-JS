@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body>
+    <h1>Programa Tabuada</h1>
+    <p><input type="number" id="number"></p>
+    <input type="button" value="Mostrar Tabuada" onclick="Calcular()">
+    <pre id="res"></pre>
+</body>
+<script>
+    function Calcular() {
+        var num = Number(window.document.getElementById("number").value);
+        var res = window.document.getElementById("res");
+
+        var resposta = ""; // variavel do tipo string para concatenar a resposta 
+        for (var i = 1; i <= 10; i++ ) {
+            resposta = resposta + num + "x" + i + "=" + num * i;
+        }
+        res.textContent = resposta;
+        
+
+    }
+</script>
+</html>
