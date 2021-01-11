@@ -1,0 +1,12 @@
+<script>
+    // Programa que le anuncio e informa numero de palavras 
+var anuncio = prompt("Anúncio: "); // le o anuncio
+var tam = anuncio.length; // obtem o tamanho 
+var numPalavras = 0; // inicializa contador
+for (var i = 0; i < tam; i++) {
+    if (anuncio.charAt(i) == " ") {
+        numPalavras++;
+    }
+}
+alert("Anúncio: " + anuncio + "\nN Palavras: " + (numPalavras + 1)); 
+</script>
