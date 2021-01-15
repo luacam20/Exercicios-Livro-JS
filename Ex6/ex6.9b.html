@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Referencia Bibliográfica</h1>
+
+    <p>Nome do Autor: 
+        <input type="text"  id="inName">
+    </p>
+    <input type="button" value="Gerar Citação Bibliográfica" onclick="btGerar()">
+    <h3 id="res"></h3>
+</body>
+<script>
+    function btGerar() {
+    var nome = document.getElementById("inName").value;
+    var res = document.getElementById("res");
+
+    var partes = nome.split(" ");
+    var bibl = "";          //vai concatenar letras 
+    var tam = partes.length; // obtém n de itens do vetor partes 
+
+    // pecorre os itens do vetor (exeto o último)
+    for (var i = 0; i < tam - 1; i++) {
+        bibl += partes[i].charAt(0) + ". "; // e obtém a letra inicial de cada item
+    }
+    // concatena as letras iniciais com a ultima parte (sobrenome) e letras 
+    partes[tam - 1] += ", " + bibl; 
+    console.log("partes");
+    // exibe bibliografia em letras maiusculas 
+    res.textContent = "Citação Bibliográfica: " + partes[tam - 1].toUpperCase();
+    }
+  
+    
+
+</script>
+</html>

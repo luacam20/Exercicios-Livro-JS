@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Multa de Transito</h1>
+    <p>
+        Infringement date:
+        <input type="date" id="inDate">
+    </p>
+    <p>
+        Fine Amount R$: 
+        <input type="text" id="inValue">
+    </p>
+    <input type="button" value="Calculate deadline and discount amount" onclick="Calculate()">
+    <h3 id="outAnswer"></h3>
+    
+</body>
+<script>
+    function Calculate() {
+        var data = document.getElementById("inDate").value;
+        var valor = Number(document.getElementById("inValue").value);
+        var res = document.getElementById("outAnswer");
+       
+        var dia = new Date(data).getDate();
+        
+        dia += 1;
+        
+        var limitData = new Date(data);
+
+        limitData.setDate(dia + 90);
+       
+        var desconto = valor - valor * 0.20;
+
+        res.innerHTML = `Limit date = ${limitData}, Value: R${desconto.toFixed(2)}`;
+    }
+</script>
+</html>
