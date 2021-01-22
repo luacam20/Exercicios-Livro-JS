@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cap7.css">
+</head>
+<body>
+    <h1>Clube Natação</h1>
+    <img src="https://image.freepik.com/free-vector/cute-boy-girl-with-swim-suit-cartoons_18591-21143.jpg" class="normal">
+    <p> Nome do Atleta: 
+        <input type="text" id="inName">
+    </p>
+    <p>Idade: 
+        <input type="text" id="inIdade">
+    </p>
+    <p>
+        <input type="button" value="Categorizar Atleta" id="btCategorizar">
+    </p>
+    <h3 id="outres"></h3>
+   
+</body>
+<script>
+    function retornarTracos() {
+        var nome = document.getElementById("inName").value;
+        var idade = Number(document.getElementById("inIdade").value);
+       
+        if (idade <= 12) {
+            res.innerHTML = `Nome do(a) aluno(a): ${nome} <p>--------------------------------</p> Infantil`;
+        } if (idade > 13 || idade == 18) {
+            res.innerHTML = `Nome do(a) aluno(a): ${nome} <p>--------------------------------</p> Juvenil`; 
+        } if (idade > 18) {
+            res.innerHTML = `Nome do(a) aluno(a): ${nome} <p>---------------------------------</p> Adulto`; 
+        }
+          
+    }
+    var res = document.getElementById("outres");
+    var btCategorizar = document.getElementById("btCategorizar");
+    btCategorizar.addEventListener("click", retornarTracos); 
+    console.log(btCategorizar) 
+</script>
+</html>

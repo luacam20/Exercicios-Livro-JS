@@ -1,9 +1,9 @@
 h1 { border-bottom-style: inset;};
 pre { font-size: 3.2em;}
-img.normal {float: left; height: 400px; width: 400px;}
+img.normal {float: right; height: 500px; width: 500px;}
 img.alta {float: right; height: 500px; width: 500px; }
 aDireita {text-align: right;}
-span {margin-left: 70px;}
+span {margin-left: 100px;}
 select { width: 150px;}
 .detalhes {width: 380px;}
 .oculta {display: none;}
